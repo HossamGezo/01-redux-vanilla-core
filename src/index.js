@@ -1,8 +1,24 @@
+/**
+ * ⚠️ DEPENDENCY VERSIONS NOTE ⚠️
+ * 
+ * We are intentionally using specific older versions for this project:
+ * - redux: ^4.1.2
+ * - redux-thunk: ^2.4.2
+ * 
+ * REASON:
+ * 1. Learning Core Concepts: Modern Redux (v5+) deprecates the original `createStore` method 
+ *    in favor of Redux Toolkit. Since this project aims to understand the underlying 
+ *    architecture using Vanilla JS, the legacy versions are required.
+ * 
+ * 2. Environment Compatibility: These versions ensure full stability within a standard 
+ *    Node.js (CommonJS) environment, avoiding ES Module conflicts found in newer releases.
+ */
+
 // - - - - - - - - - - Import Libraries
 // *** Import redux
-const redux = require("redux");
+const {createStore, combineReducers, applyMiddleware} = require("redux");
 // *** Import Redux Logger
-const logger = require("redux-logger");
+const {createLogger} = require("redux-logger");
 
 // - - - - - - - - - - Cake & Icecream Store Logic
 
@@ -58,16 +74,13 @@ const icecreamReducer = (state = icecreamInitialState, action) => {
 };
 
 // * Root Reducer
-const rootReducer = redux.combineReducers({
+const rootReducer = combineReducers({
   cake: cakeReducer,
   icecream: icecreamReducer,
 });
 
 // *** Store
-const store = redux.createStore(
-  rootReducer,
-  redux.applyMiddleware(logger.createLogger())
-);
+const store = createStore(rootReducer, applyMiddleware(createLogger()));
 
 // *** Apply Actions
 store.dispatch(buyCake());
