@@ -1,4 +1,14 @@
-# ⚛️ Redux Learning Journey: Vanilla JS Core
+# ⚡ Redux Core (Vanilla JS)
+
+## 📚 Redux Mastery Series Navigation
+
+| Part | Topic | Tech Stack | Link |
+| :---: | :--- | :--- | :---: |
+| **01** | **Redux Core** | Vanilla JS, Store, Actions | 👉 **You are here** |
+| **02** | **React Redux** | React, Connect, Hooks, Thunk | [View Repo](https://github.com/HossamGezo/02-react-redux-standard) |
+| **03** | **Redux Toolkit** | RTK, TypeScript, createAsyncThunk | [View Repo](https://github.com/HossamGezo/03-redux-toolkit-typescript) |
+
+---
 
 > **Part 1** of the Redux Mastery Series.
 
@@ -59,6 +69,13 @@ To ensure deep understanding of the internal working mechanism of Redux (before 
 ### 2. Middleware & Async Operations
 - **Redux Logger:** Logs every state change for debugging.
 - **Redux Thunk:** Allows action creators to return a *function* instead of an object, enabling asynchronous operations (like API calls) before dispatching the final action.
+
+---
+
+## 👨‍💻 Author
+
+**Hossam**
+- GitHub: [@HossamGezo](https://github.com/HossamGezo)
 
 ---
 
